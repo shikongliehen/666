@@ -1,0 +1,6 @@
+#server:
+#  port: 8089
+
+teacher:
+  name: mayun
+  age: 38
