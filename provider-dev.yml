@@ -1,21 +1,12 @@
 server:
-  port: 8001
+  port: 8002
+
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
-    username: root
-    password: root
   application:
-    name: provider
-#  zipkin:
-#    base-url: http://localhost:9411
-#  sleuth:
-#    sampler:
-#      probability: 1.0
+    name: consumer
+  main: #允许多个feign调用相同的服务接口
+    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka/
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
